@@ -16,8 +16,8 @@
     <article class=" m-auto" style="width:30%">
         <p class="text-danger text-center font-weight-bold border border-danger">Vous êtes sur le point de supprimer cet article. Cette action sera irréversible.</p>
         <div class="m-auto text-center">
-            <?php var_dump($article["id"]) ?>
-            <form method="POST" action="<?= $requestUrl?>/delecte?productId=<?= $article["id"] ?>">
+            <?php var_dump($article["postId"]) ?>
+            <form method="POST" action="<?= $requestUrl?>/delecte?productId=<?= $article["postId"] ?>">
                 <input type="submit" class="btn btn-lg btn-danger text-light m-auto">
             </form>
                 <a href="<?= $requestUrl?>/members" class="btn btn-lg btn-success text-light m-auto">Retour</a>
