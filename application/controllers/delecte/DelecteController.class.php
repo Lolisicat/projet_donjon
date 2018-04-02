@@ -18,10 +18,12 @@ class DelecteController
     public function httpPostMethod(Http $http, array $formFields)
     {
         session_start();
+
         if(isset($_SESSION["connected"])) {
             $reponse = $_GET["productId"];
+            $comments = $reponse;
             $editModel = new DelecteModel();
-            $edit = $editModel->removePost($reponse);
+            $edit = $editModel->removePost($reponse,$comments);
             $http->redirectTo("/");
         }
         else {

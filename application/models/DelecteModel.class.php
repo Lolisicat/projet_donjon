@@ -2,13 +2,14 @@
 
 class DelecteModel {
 
-    function removePost($reponse) {
+    function removePost($reponse,$comments) {
         $database = new Database();
-        $query = "DELETE FROM 
-        posts
-        WHERE
-        posts.id = ?";
-        return $database->executeSql($query,[$reponse]);
+        $query = "
+        BEGIN;
+        DELETE FROM posts WHERE posts.id = ?;
+        DELETE FROM comments WHERE comments.post_id = ?;
+        COMMIT;";
+        return $database->executeSql($query,[$reponse,$comments]);
     }
 
 
