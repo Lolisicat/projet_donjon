@@ -1,0 +1,21 @@
+
+        <article class="makeArticle">
+
+            <h1>Créer un nouvel article</h1>
+
+            <form method="POST" action="<?= $requestUrl?>/makearticle" enctype="multipart/form-data" class="edit">
+                <fieldset class="edit">
+                    <input type="text" name="titre" id="titre" placeholder="Titre de l'article" /><br/>
+                    <label for="category" id="category">Catégorie ?</label><br />
+                    <select name="category" id="category">
+                        <?php foreach ($article as $articles) :?>
+                            <option value="<?= $articles["id"]; ?>"> <?= $articles["category_name"] ;?></option>
+                        <?php endforeach ?>
+                    </select><br />
+
+                    <textarea name="content" id="content" placeholder="Contenu de votre article" rows="30" cols="110"></textarea><br/>
+                    <input type="file" name="fileToUpload" id="fileToUpload"><label for="fileToUpload">(Format JPG, PNG ou GIF / max 2 Mo)</label><br />
+                    <input type="submit" id="run" value="Envoyer"/>
+                </fieldset>
+            </form>
+        </article>

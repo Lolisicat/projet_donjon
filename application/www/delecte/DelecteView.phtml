@@ -1,0 +1,25 @@
+<section id="view" class="d-flex justify-content-center">
+    <article class=" m-5 border text-center" style="width:50%">
+        <?php if(isset($article['picture'])) :?>
+            <img src="<?= $article["picture"] ;?>" alt="photo de l'article" class="rounded my-4 mx-auto d-block" style="width:40%"/>
+        <?php endif; ?>
+
+        <p class="font-weight-bold"><?= $article['title'] ;?></p>
+
+        <p><?= $article["category_name"]; ?></p>
+
+        <p> Crée le <?= $article["creation_date"];?> <br> par <?= $article["pseudo"];?></p>
+
+        <p><?= $article["contents"]; ?></p>
+
+    </article>
+    <article class=" m-auto" style="width:30%">
+        <p class="text-danger text-center font-weight-bold border border-danger">Vous êtes sur le point de supprimer cet article. Cette action sera irréversible.</p>
+        <div class="m-auto text-center">
+            <?php var_dump($article["id"]) ?>
+            <form method="POST" action="<?= $requestUrl?>/delecte?productId=<?= $article["id"] ?>">
+                <input type="submit" class="btn btn-lg btn-danger text-light m-auto">
+            </form>
+                <a href="<?= $requestUrl?>/members" class="btn btn-lg btn-success text-light m-auto">Retour</a>
+        </div>
+    </article>

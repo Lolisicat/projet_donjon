@@ -1,0 +1,14 @@
+<article id="description">
+    <h1>Personnages des joueurs</h1>
+
+
+        <div class="carousel-slick">
+        <?php
+        foreach($descr as $player): ?>
+            <li value="<?php echo $player["id"];?>"><img src="<?= $wwwUrl.$player["photo"];?>" alt="<?= $player["name"] ;?>"><div class="slide"></div></li>
+        <?php endforeach;?>
+        </div>
+
+
+    <div id="pj"></div>
+</article>

@@ -1,0 +1,40 @@
+/* MAIN */
+
+article#description  {
+    width: 93%;
+    margin: auto;
+
+}
+
+
+article#description img, .slide {
+    width: 200px;
+    height: 200px;
+}
+
+article#description img {
+    position: relative;
+}
+
+.slide {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    background-color: rgba(213, 213, 213, 0.7);
+    top: 0;
+}
+
+.slick-prev::before, .slick-next::before {
+    z-index: 99;
+    font-size: 30px !important;
+    color: #595959 !important;
+}
+.carousel-slick {
+    display: none;
+}
+
+#view .img {
+    height: 600px;
+    background-attachment: fixed !important;
+
+}

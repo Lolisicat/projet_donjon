@@ -1,0 +1,21 @@
+<article id="firstime">
+
+    <h2>Modifications de votre compte</h2>
+
+        <p>
+            Comme il s'agit de votre première connexion, un mail, un mot de passe et un pseudo provisoires vous ont été attribués.
+            Par mesure de sécurité, il est préférable que de les modifier dès maintenant. <br>
+            Vous pourrez cependant modifier votre compte à tout moment.
+        </p>
+
+        <form class=""  method="POST"  action="<?= $requestUrl?>/firstime?productId=<?= $_SESSION["id"];?>">
+            <fieldset class="">
+                <label for="login">Votre email actuel : </label><textarea name="login" id="login"><?= $userEdit["mail"] ;?></textarea><br />
+                <label for="password">Votre mot de passe actuel : </label><textarea name="password" id="password"><?= $userEdit["password"] ;?></textarea><br />
+                <label for="pseudo">Votre pseudo actuel : </label><textarea name="pseudo" id="pseudo"><?= $userEdit["pseudo"] ;?></textarea><br />
+                <input type="submit" id="run" value="Mettre à jour"/>
+
+            </fieldset>
+        </form>
+
+</article>

@@ -1,0 +1,65 @@
+/*
+Affichage Ajax Fiche Perso*/
+
+#pj {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 3% auto;
+    font-size: 2.3rem;
+}
+
+#fiche, #info, #bag {
+    width: 33%;
+}
+
+#fiche {
+    text-align: center;
+    width: 20%;
+}
+
+#info {
+    width: 45%;
+}
+
+#bag {
+    width: 35%;
+    display: flex;
+    justify-content: space-evenly ;
+}
+
+.raceclass {
+    display: flex ;
+    justify-content: space-between;
+}
+
+.race, .classe {
+    text-align: center;
+    margin: auto 20px;
+    border: 1px solid black;
+    padding: 20px;
+}
+
+p.descr, p.eqpt, p.item {
+    text-align: justify;
+    padding: 10px 16px;
+}
+
+#pj h2 {
+    margin-top : 15px;
+    font-size : 2.5rem;
+}
+
+#alleqpt, #allobjet {
+    width: 50%;
+    border: 1px solid black;
+    padding: 20px;
+    margin: 0 9px 20px;
+    background: #f9f2cf url("../images/paper.png");
+}
+
+#alleqpt {
+    border-right: 1px solid #595959;
+}
+
+

@@ -1,0 +1,35 @@
+<article class="membres">
+    <h1><i class="fa fa-cogs" aria-hidden="true"></i> Page d'administration</h1>
+
+    <p>Bonjour, <strong><?= $_SESSION["pseudo"];?></strong> !</p><br>
+    <p id="article"><a href="<?= $requestUrl?>/makearticle">Rédiger un nouvel article</a></p>
+
+
+
+
+
+    <table id="admintab" class="mx-5">
+        <tr>
+            <th>Titre</th>
+            <th>Auteur</th>
+            <th>Catégorie</th>
+            <th id="thedit">Editer</th>
+            <th id="thsuppr">Supprimer</th>
+        </tr>
+
+        <?php foreach ($article as $articles): ?>
+
+            <tr><td><a href='<?= $requestUrl?>/members?productId=<?= $articles["id"]; ?>'><?=  $articles["title"] ;?></a></td>
+
+                <td><?= $articles["pseudo"];?></td>
+
+                <td><?= $articles["category_name"]; ?></td>
+
+                <td><a href="<?= $requestUrl?>/edit?productId=<?= $articles["id"]; ?>"><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
+
+                <td><a href="<?= $requestUrl?>/delecte?productId=<?= $articles["id"]; ?>"><i class="fa fa-trash-o"</a></td></tr>
+
+        <?php endforeach ?>
+    </table>
+
+</article>

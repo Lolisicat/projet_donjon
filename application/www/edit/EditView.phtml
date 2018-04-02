@@ -1,0 +1,16 @@
+<article class="edit">
+    <h1>Editer un article</h1>
+
+    <?php foreach ($edit as $arti) :?>
+        <form class="edit"  enctype="multipart/form-data" method="POST" action="<?= $requestUrl?>/edit?productId=<?= $arti["id"];?>">
+            <fieldset class="edit">
+                <textarea  name="titre" id="titre" ><?= $arti["title"];?></textarea><br/>
+                <textarea name="content" id="content" rows="30" cols="110"><?= $arti["contents"] ;?></textarea><br/>
+                <input type="hidden" name="hidden" value="<?= $arti["picture"];?>"/>
+                <input type="file" name="file" id="fileToUpload"><label for="fileToUpload">(Format JPG, PNG ou GIF / max 2 Mo)</label><br />
+                <input type="submit" id="run" value="Mettre à jour"/>
+
+            </fieldset>
+        </form>
+    <?php endforeach ?>
+</article>

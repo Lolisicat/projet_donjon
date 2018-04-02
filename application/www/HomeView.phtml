@@ -1,0 +1,55 @@
+<section id="home">
+    <div id="bg">
+        <div class="container">
+            <div class="effet">
+                <h1 class="h1"><a href="#" class="pl-5" >DONJON</a></h1>
+                <h1 class="h2"><a href="#" class="pl-5" >Présentation</a></h1>
+            </div>
+        </div>
+    </div>
+    <section class="container-fluid text-center px-5">
+        <div class="row">
+            <section class="m-auto">
+                <h2 class=" text-center m-5">Dernière news</h2>
+            </section>
+            <?php $first=0 ;?>
+
+<?php
+foreach($article as $articles): ?>
+
+    <?php if($first==0) : ?>
+            <article class="col-12 d-flex justify-content-center my-2 position-relative">
+                <div class="col-5 p-0">
+                    <img src="<?= $articles["picture"] ;?>" class=" w-100 h-100" >
+                </div>
+                <div class="text-center text-light px-5 col-7" style="background: linear-gradient(to right, rgba(125,126,125,1) 0%,rgba(53,53,53,1) 100%); box-shadow: 7px 2px 7px -3px rgba(120,118,120,1)">
+                    <h3 class=" my-5 text-center"><?php echo $articles['title'] ;?></h3>
+                    <p><?= $articles["category_name"] ;?>, le <em><?= $articles["creation_date"] ;?></em></p>
+                    <p class="text-left"><?= substr($articles["contents"], 0, 800); ?>...</p>
+                    <div class="position-static fixed-bottom">
+                        <a href="<?= $requestUrl?>/showarticle?productId=<?= $articles["id"]; ?>" class="bouton text-light">Lire la suite</a>
+                    </div>
+                </div>
+            </article>
+        <section class="col-12 m-auto">
+            <h2 class="text-center m-5">Tous les articles</h2>
+        </section>
+                <?php $first=1 ;?>
+                <?php else : ?>
+
+            <article class="col-4 mb-3 position-relative">
+                <img src="<?= $articles["picture"] ;?>" class="w-100 h-50" >
+                <div class="text-center p-2 mb-2 text-light" style="background: linear-gradient(to right, rgba(125,126,125,1) 0%,rgba(53,53,53,1) 100%);box-shadow: 0px 15px 11px -5px rgba(120,118,120,1)">
+                    <h3 class=" my-3 text-center"><?php echo $articles['title'] ;?></h3>
+                    <p><?= $articles["category_name"] ;?>, le <em><?= $articles["creation_date"] ;?></em></p>
+                    <p><?= substr($articles["contents"], 0, 200); ?>...</p>
+                    <div class="lien">
+                        <a href="<?= $requestUrl?>/showarticle?productId=<?= $articles["id"]; ?>" class="bouton text-light">Lire la suite</a>
+                    </div>
+                </div>
+            </article>
+<?php endif;?>
+<?php endforeach;?>
+        </div>
+    </section>
+</section>

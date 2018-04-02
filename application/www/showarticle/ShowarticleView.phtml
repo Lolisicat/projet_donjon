@@ -1,0 +1,48 @@
+<section id="view">
+    <article>
+
+
+
+       <?php if(isset($article['picture'])) :?>
+           <div  style="background: url(<?= $article["picture"] ;?>) center no-repeat" alt="photo de l'article" class=" img w-100"></div>
+       <?php endif; ?>
+
+            <h1><?= $article['title'] ;?></h1>
+
+            <h2><?= $article["category_name"]; ?></h2>
+
+            <h3> Crée le <?= $article["creation_date"];?> par <?= $article["pseudo"];?></h3>
+
+                <p><?= $article["contents"]; ?></p>
+
+            <p>Commentaires :</p>
+
+        <?php
+        foreach($article["comments"] as $comments): ?>
+
+                <div class="comments">
+                    <?= $comments["mail"];?>
+                    <?= $comments["creation_date"];?>
+                    <?= $comments["contents"];?>
+                </div>
+
+        <?php endforeach;?>
+
+
+
+        <form method="POST" action="<?= $requestUrl?>/showarticle?productId=<?= $article["postId"] ;?>">
+            <fieldset>
+                <label>Ajouter un commentaire</label><br>
+                <input type="text" name="pseudo" placeholder="Votre pseudo"><br>
+                <input type="email" name="mail" placeholder="Votre adresse mail"><br>
+                <textarea name="comment" rows="20" cols="110" placeholder="Votre commentaire..."></textarea><br>
+                <button type="submit" name="submit" id="run" class="btn btn-success btn-lg">Envoyer</button>
+            </fieldset>
+        </form>
+
+        <div class="lien">
+            <a href="<?= $requestUrl?>/" class="bouton">Retour</a>
+        </div>
+
+    </article>
+</section>

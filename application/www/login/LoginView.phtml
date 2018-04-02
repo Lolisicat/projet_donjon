@@ -1,0 +1,25 @@
+
+<article id="login">
+    <h2 class="text-center mx-5 mb-5 pt-5"><i class="fa fa-lock" aria-hidden="true"></i> Se connecter avec un compte utilisateur</h2>
+    <form method="POST" action="<?= $requestUrl?>/login">
+        <p id='message'>
+            <?php if (isset($message)){
+                echo $message;
+            };
+            ?>
+        </p>
+        <fieldset class="text-center col-3 m-auto p-5" style="background: linear-gradient(to right, rgba(125,126,125,1) 0%,rgba(53,53,53,1) 100%);">
+            <img src="<?= $wwwUrl ?>/images/login.png" alt="Animorphisme de donjon" class="img-thumbnail border-0 rounded-circle mb-5"/>
+            <form>
+                <div class="form-group col m-auto">
+                    <label for="login" class="text-light">Identifiant</label>
+                    <input type="email" name="login" class="form-control form-control-lg mb-2" id="login" aria-describedby="emailHelp" placeholder="Votre e-mail">
+                </div>
+                <div class="form-group col m-auto">
+                    <label for="password" class="text-light">Mot de passe</label>
+                    <input type="password" name="password" class="form-control form-control-lg mb-5" id="password" placeholder="Votre mot de passe">
+                </div>
+                <button type="submit" name="submit" id="run" class="btn btn-success btn-lg">Submit</button>
+            </form>
+        </fieldset>
+</article>
