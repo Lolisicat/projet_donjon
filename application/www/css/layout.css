@@ -2,9 +2,12 @@ header, footer {
     font-family: 'MedievalSharp', cursive;
 }
 
+body {
+    background-color: #FEFEE2;
+}
+
 main {
     font-family: 'Roboto', cursive;
-    background-color: #FEFEFE;
     margin: auto;
 }
 
