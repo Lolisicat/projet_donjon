@@ -17,8 +17,10 @@ class FirstimeController
     public function httpPostMethod(Http $http, array $formFields)
     {
         session_start();
+
         $mail = $formFields["login"];
         $password = $formFields["password"];
+        $password = password_hash($password, PASSWORD_DEFAULT);
         $pseudo = $formFields["pseudo"];
         $id = $_GET["productId"];
         $first = 2;

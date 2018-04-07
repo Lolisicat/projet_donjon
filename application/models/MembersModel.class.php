@@ -4,8 +4,8 @@ class MembersModel {
 
     function logUser($log, $pass) {
         $database = new Database();
-        $query = "SELECT * FROM users WHERE mail = ? AND password = ?";
-        return $database->queryOne($query,[$log,$pass]);
+        $query = "SELECT * FROM users WHERE mail = ?";
+        return $database->queryOne($query,[$log]);
     }
 
     function getUser($id) {
@@ -16,14 +16,14 @@ class MembersModel {
 
     function updateUser($mail, $password, $pseudo, $first, $id) {
         $database = new Database();
-        $query = "UPDATE 
-        users 
-        SET 
-        mail = ?, 
+        $query = "UPDATE
+        users
+        SET
+        mail = ?,
         password = ?,
         pseudo = ?,
         first_connected = ?
-        WHERE 
+        WHERE
         id = ?";
         return  $database->executeSql($query,[$mail,$password,$pseudo,$first, $id]);
     }
